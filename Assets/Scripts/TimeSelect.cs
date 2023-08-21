@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class TimeSelect : MonoBehaviour
 {
     public Slider timeSlider;
+    public Slider speedSlider;
     public TextMeshProUGUI timeInDay;
     public SceneManager sceneManager;
     public DatePicker datePicker;
@@ -19,9 +20,9 @@ public class TimeSelect : MonoBehaviour
         return _time;
     }
 
-    public void AddTime(float speed)
+    public void AddTime()
     {
-        _time += Time.deltaTime * speed;
+        _time += Time.deltaTime * speedSlider.value;
         
         if(_time >= 86400)
         {

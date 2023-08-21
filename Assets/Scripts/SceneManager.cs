@@ -10,8 +10,6 @@ using UnityEngine.UI;
 
 public class SceneManager : MonoBehaviour
 {
-    [SerializeField] private float _speed = 1;
-
     public DatePicker datePicker;
     public CoordinateInput coordinateInput;
     public Sun sunControl;
@@ -56,14 +54,14 @@ public class SceneManager : MonoBehaviour
         solar.SolarDateTime = dateTime;
 
         sunControl.SetSolarTimes(solar.GetSolarTimes());
-        sunControl.ChangeTime(timeSelect.GetTime());
+        sunControl.ChangeTime(timeSelect.GetTime(), dateTime.DayOfYear);
     }
 
     private void Update()
     {
         if(isPlay)
         {
-            timeSelect.AddTime(_speed);
+            timeSelect.AddTime();
             ChangeSun();
         }
     }
