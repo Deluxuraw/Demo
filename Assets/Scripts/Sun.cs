@@ -55,7 +55,7 @@ public class Sun : MonoBehaviour
         double distance = 1 - double.Parse(solarTimes.EccentricityOfEarthOrbit.ToString()) * Math.Cos(c);
 
 
-        Debug.Log(distance);
-        Debug.Log(solarTimes.SunMeanAnomaly);
+        //Debug.Log(distance);
+        //Debug.Log(solarTimes.SunMeanAnomaly);
     }
 }
